@@ -1,0 +1,33 @@
+{
+  "originHash" : "8d1d990ee04b3f3f3d8845b9ce73a4489aa8e14cc094dd5154619a7aa49dcfc6",
+  "pins" : [
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "132aea4f236ccadc51590b38af0357a331d51fa2"
+      }
+    },
+    {
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a5fa7a6a57abeb834df1b3fa43ea9133137d5ade"
+      }
+    },
+    {
+      "identity" : "then",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/Then",
+      "state" : {
+        "branch" : "main",
+        "revision" : "529bfcb6a47276296d202b94a9c49ad6a10b6da2"
+      }
+    }
+  ],
+  "version" : 3
+}
