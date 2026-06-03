@@ -6,7 +6,9 @@ import PackageDescription
 let package = Package(
     name: "DevelopKit",
     products: [
+		/// 只做聚合不放具体实现
         .library(name: "DevelopKit", targets: ["DevelopKit"]),
+		.library(name: "DevelopFoundation", targets: ["DevelopFoundation"]),
     ],
 	dependencies: [
 		.package(url: "https://github.com/devxoul/Then", branch: "main"),
@@ -18,9 +20,13 @@ let package = Package(
         .target(name: "DevelopKit",
 				dependencies: [
 					"Then",
+					"SnapKit",
 				]
         ),
-        .testTarget(name: "DevelopKitTests", dependencies: ["DevelopKit"]),
+		.target(name: "DevelopFoundation"),
+		// MARK: - 下面都是测试Target
+		.testTarget(name: "DevelopKitTests", dependencies: ["DevelopKit"]),
+		.testTarget(name: "DevelopFoundationTests", dependencies: ["DevelopFoundation"]),
     ],
     swiftLanguageModes: [.v6]
 )
