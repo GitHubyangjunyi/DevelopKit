@@ -12,7 +12,7 @@ public extension Collection {
 		!isEmpty
 	}
 	
-	/// 如果集合不为空，则返回集合本身，否则返回 nil
+	/// 如果集合不为空则返回集合本身否则返回 nil
 	var filledOrNil: Self? {
 		isEmpty ? nil : self
 	}
