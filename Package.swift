@@ -5,9 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "DevelopKit",
+	platforms: [.iOS(.v15)],
     products: [
 		/// 只做聚合不放具体实现
         .library(name: "DevelopKit", targets: ["DevelopKit"]),
+		.library(name: "DevelopRx", targets: ["DevelopRx"]),
+		.library(name: "DevelopUIKit", targets: ["DevelopUIKit"]),
 		.library(name: "DevelopFoundation", targets: ["DevelopFoundation"]),
     ],
 	dependencies: [
@@ -21,8 +24,20 @@ let package = Package(
 				dependencies: [
 					"Then",
 					"SnapKit",
+					.target(name: "DevelopUIKit"),
+					.target(name: "DevelopFoundation"),
 				]
         ),
+		.target(name: "DevelopRx",
+				dependencies: [
+					.target(name: "DevelopFoundation"),
+					.product(name: "RxCocoa", package: "RxSwift"),
+					.product(name: "RxSwift", package: "RxSwift"),
+				]),
+		.target(name: "DevelopUIKit",
+				dependencies: [
+					.target(name: "DevelopFoundation"),
+				]),
 		.target(name: "DevelopFoundation"),
 		// MARK: - 下面都是测试Target
 		.testTarget(name: "DevelopKitTests", dependencies: ["DevelopKit"]),
